@@ -1,19 +1,18 @@
-#include "holberton.h"
-/**
- *  * _puts_recursion - Write a function that prints a string, followed by a new
- *   * line.
- *    *
- *     * @s: This is the input string
- *      */
+#include "main.h"
 
+/**
+ *  * _puts_recursion - prints a string followed by a new line
+ *   * @s: the string to be printed
+ *    *
+ *     * Return: void
+ *      */
 void _puts_recursion(char *s)
 {
-		if (*s == '\0')
-				{
-							_putchar('\n');
-									return;
-										}
-			_putchar(*s);
-				s++;
-					_puts_recursion(s);
+	    if (*s == '\0') /* base case - end of string */
+		        {
+				        _putchar('\n'); /* print new line */
+					        return;
+						    }
+	        _putchar(*s); /* print current character */
+		    _puts_recursion(s + 1); /* recursive call to print rest of string */
 }
